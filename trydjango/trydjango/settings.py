@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     #third party apps:
     'crispy_forms',
+    'registration',
     #my apps:
     'newsletter',
 ]
@@ -140,4 +142,15 @@ STATICFILES_DIRS = [
 
 # MEDIA_URL =
 # MEDIA_ROOT =
+
+#CrispyForms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#Django-Registration-Redux
+
+REGISTRATION_OPEN = True                # If True, users can register
+ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
+LOGIN_REDIRECT_URL = '/'  # The page you want users to arrive at after they successful log in
+# LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,
+SITE_ID=1

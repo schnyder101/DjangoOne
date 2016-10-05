@@ -5,8 +5,8 @@ from django.conf import settings
 
 # Create your views here.
 def home(request):
-	title="Welcome"
-
+	title="Subscribe below"
+	form =SignUpForm(request.POST or None)
 	if request.user.is_authenticated():
 		title='My Title %s' %(request.user)
 		form =SignUpForm(request.POST or None)
@@ -32,8 +32,12 @@ def home(request):
 def contact(request):
 	
 	form=ContactForm(request.POST or None)
+	title='Contact Us'
+	title_align_center=True
 	context={
 			"form":form,
+			"title":title,
+			"title_align_center":title_align_center,
 		}
 	if form.is_valid():
 		

@@ -1,26 +1,72 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{%load staticfiles %}
+<style>
+{% block style %}
+.navbar-static-top {
+	margin-bottom: 0px !important;
+}
+.jumbostyling{
+ 	background-color: #ca8787 !important ;
+ 	color: #FFF !important;
+}
+{% endblock %}
+</style>
 {% block jumbotron %}
-<!-- Main component for a primary marketing message or call to action -->
+
+<div class="jumbotron jumbostyling">
+<div class="container">
 <div class="row"> 
-	<div class="col-sm-8">  
-	      <div class="jumbotron">
+	<div class="col-sm-6">  
+	      
 	        <h1>Try Django</h1>
 	        <p>Hi There.This is your MVP Page</p>
 	        <p>
 	          <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
 	        </p>
 
-      	  </div>
     </div>
-    <div class="col-sm-4" style="background-color:black;height:300px;">
+    
+    <div class="col-sm-6" >
+    <!-- For Video on Home Page -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/A3ytTKZf344" frameborder="0" allowfullscreen></iframe>
+    <!-- For Image on Home Page -->
+    <!-- <img src="{% static 'newsletter/Koala.jpg' %}" width="560" height="315" class="img-responsive" /> -->
     </div>
-</div>      
+</div>
+</div>     
+</div> 
 {% endblock %}
 
 {% block content %}
+
+<div class="row">
+	<div class="col-sm-4">
+	<!-- #font awesome tag <i> -->	
+	
+	<p class='lead text-align-center-orange'>Built with Django &amp; Bootstrap
+	<br/><br/>
+	<i class="fa fa-camera-retro fa-lg fa-5x"></i>
+	</p>		
+	</div>
+	<div class="col-sm-4">
+	<p class='lead text-align-center-orange'>Created for starters of all kinds.	<br/><br/>
+	<i class="fa fa-play fa-5x" aria-hidden="true"></i>
+	<i class="fa fa-arrow-up fa-5x" aria-hidden="true"></i>
+	</p>
+	</div>
+	<div class="col-sm-4">
+	<p class='lead text-align-center-orange'>Always Open Source
+	</br>
+	<span class="fa-stack fa-lg fa-3x">    
+    <i class="fa fa-square-o fa-spin fa-stack-2x"></i>
+    <i class="fa fa-twitter fa-stack-1x"></i>
+    </span>
+	</p>		
+	</div>
+</div>	
 <div class ="row">
-	<div class="col-md-3 col-sm-3 pull-right">
+	<div class=" col-sm-6 pull-center">
 		<h1>{{template_title}}</h1>
 
 		<form method='POST' action=''>{% csrf_token %}
@@ -28,14 +74,6 @@
 		<input class='btn btn-success' type='submit' name='Sign Up'>
 		</form>
 	</div>
-	<div class="col-sm-3">
-	<p class='lead'>Built with Django &amp; Bootstrap</p>		
-	</div>
-	<div class="col-sm-3">
-	<p class='lead'>Created for starters of all kinds.</p>		
-	</div>
-	<div class="col-sm-3">
-	<p class='lead'>Always Open Source</p>		
-	</div>
-</div>	
+</div>
+
 {% endblock %}
